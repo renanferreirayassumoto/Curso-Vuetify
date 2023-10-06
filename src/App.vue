@@ -5,6 +5,7 @@
     </v-app-bar>
     <v-main>
       <v-container>
+        <h2 class="py-5 text-center bg-red-accent-3 text-lime-darken-2">Título</h2>
         <h1 class="d-none d-md-flex d-lg-none text-h5 text-md-h3 text-lg-h1">Dashboard</h1>
         <h1 class="hidden-sm-and-down">SUMIU</h1>
         <div class="d-flex">
