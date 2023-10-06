@@ -5,97 +5,106 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <v-btn color="green-darken-1">Submit</v-btn>
-        <h2 class="py-5 text-center bg-red-accent-3 text-lime-darken-2">
-          Título
-        </h2>
-        <h1 class="d-none d-md-flex d-lg-none text-h5 text-md-h3 text-lg-h1">
-          Dashboard
-        </h1>
-        <h1 class="hidden-sm-and-down">Sumiu</h1>
-        <div class="d-flex">
-          <h1>Border Radius</h1>
-          <div class="rounded-0 border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div class="rounded-sm border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div class="rounded border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div class="rounded-lg border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div class="rounded-xl border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div class="rounded-pill border" style="width: 100px; height: 100px">
-            Border Radius
-          </div>
-          <div
-            class="rounded-circle border"
-            style="width: 100px; height: 100px"
-          >
-            Border Radius
-          </div>
-          <div
-            class="rounded-shaped border"
-            style="width: 100px; height: 100px"
-          >
-            Border Radius
-          </div>
-        </div>
-        <div>
-          <h1 class="mt-7">Margin e Padding</h1>
-          <div
-            class="pa-4 font-weight-black"
-            style="width: 100px; height: 100px; background-color: red"
-          >
-            Olá Mundo
-          </div>
-        </div>
-        <h1 class="text-h6">Meu app</h1>
-        <h2>Meu app</h2>
-        <h3>Meu app</h3>
-        <h4>Meu app</h4>
-        <h5>Meu app</h5>
-        <h6>Meu app</h6>
-        <br /><br />
-        <div class="text-subtitle-2">Subtitle 1</div>
-        <div class="text-caption">Subtitle 1</div>
-        <div class="flex-column flex-md-row ma-10 d-flex justify-space-between">
-          <div
-            class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2"
-          >
-            teste
-          </div>
-          <div
-            class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2"
-          >
-            teste
-          </div>
-          <div
-            class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2"
-          >
-            teste
-          </div>
-        </div>
+        <h1>Dashboard</h1>
+        <v-row>
+          <v-col cols="12" md="4" lg="3">
+            <v-card flat class="border mx-auto" max-width="400">
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
+                <v-card-title>Top 10 paisagens naturais</v-card-title>
+              </v-img>
+              <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
+              <v-card-text>
+                <div>Natureza</div>
+                <div>Uau natureza que legal estou muito feliz</div>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn variant="outlined" color="primary">Ver mais</v-btn>
+                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success"
+                  >Comprar</v-btn
+                >
+                <v-btn icon="mdi-home" variant="tonal" color="success"></v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" md="4" lg="3">
+            <v-card flat class="border mx-auto" max-width="400">
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
+                <v-card-title>Top 10 paisagens naturais</v-card-title>
+              </v-img>
+              <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
+              <v-card-text>
+                <div>Natureza</div>
+                <div>Uau natureza que legal estou muito feliz</div>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn>Ver mais</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" md="4" lg="3">
+            <v-card flat class="border mx-auto" max-width="400">
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
+                <v-card-title>Top 10 paisagens naturais</v-card-title>
+              </v-img>
+              <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
+              <v-card-text>
+                <div>Natureza</div>
+                <div>Uau natureza que legal estou muito feliz</div>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn>Ver mais</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+
+          <v-col cols="12" md="4" lg="3">
+            <v-card flat class="border mx-auto" max-width="400">
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
+                <v-card-title>Top 10 paisagens naturais</v-card-title>
+              </v-img>
+              <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
+              <v-card-text>
+                <div>Natureza</div>
+                <div>Uau natureza que legal estou muito feliz</div>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn>Ver mais</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
-      <HelloWorld />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
 
-  components: {
-    HelloWorld,
-  },
+  components: {},
 
   data: () => ({
     //
