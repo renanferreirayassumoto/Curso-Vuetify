@@ -5,6 +5,7 @@
     </v-app-bar>
     <v-main>
       <v-container>
+        <v-btn color="green-darken-1">Submit</v-btn>
         <h2 class="py-5 text-center bg-red-accent-3 text-lime-darken-2">Título</h2>
         <h1 class="d-none d-md-flex d-lg-none text-h5 text-md-h3 text-lg-h1">Dashboard</h1>
         <h1 class="hidden-sm-and-down">SUMIU</h1>
@@ -33,13 +34,13 @@
         <div class="text-subtitle-2">Subtitle 1</div>
         <div class="text-caption">Subtitle 1</div>
         <div class="flex-column flex-md-row ma-10 d-flex justify-space-between">
-          <div class="w-100 pa-4 border rounded-lg elevation-2">
+          <div class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2">
             teste
           </div>
-          <div class="w-100 pa-4 border rounded-lg elevation-2">
+          <div class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2">
             teste
           </div>
-          <div class="w-100 pa-4 border rounded-lg elevation-2">
+          <div class="bg-grey-lighten-2 w-100 pa-4 border rounded-lg elevation-2">
             teste
           </div>
         </div>
