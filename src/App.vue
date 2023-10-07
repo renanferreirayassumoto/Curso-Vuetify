@@ -1,5 +1,5 @@
 <template>
-  <v-app theme="dark">
+  <v-app>
     <v-navigation-drawer v-model="isDrawerOpen">
       <v-list>
         <v-list-subheader>Menu</v-list-subheader>
@@ -59,7 +59,103 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <h1>Dashboard</h1>
+        <h1 class="mb-6">Dashboard</h1>
+
+        <v-card flat class="border mb-4">
+          <div class="d-flex justify-space-between">
+            <v-card-title>Últimos usuários</v-card-title>
+            <v-card-title>
+              <v-btn @click="isDialogOpen = true" variant="tonal" size="small"
+                >Adicionar Usuário</v-btn
+              >
+              <v-dialog v-model="isDialogOpen" width="600px">
+                <v-card>
+                  <v-card-title>Adicionar usuário</v-card-title>
+                  <v-card-text>
+                    <v-row>
+                      <v-col>
+                        <v-text-field
+                          label="Nome"
+                          variant="outlined"
+                        ></v-text-field>
+                      </v-col>
+
+                      <v-col>
+                        <v-text-field
+                          label="Email"
+                          variant="outlined"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+
+                    <v-select
+                      label="Cargo"
+                      variant="outlined"
+                      :items="['Admin', 'Gerente', 'Convidado']"
+                    ></v-select>
+                  </v-card-text>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn variant="text" @click="isDialogOpen = false"
+                      >Cancelar</v-btn
+                    >
+                    <v-btn variant="tonal" color="success">Salvar</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-card-title>
+          </div>
+
+          <!-- <v-dialog width="600px">
+                <template #activator="{ props }">
+                  <v-btn v-bind="props" variant="tonal" size="small"
+                    >Adicionar usuário</v-btn
+                  >
+                </template>
+                <v-card>
+                  <v-card-text> Oi tudo bem? </v-card-text>
+                </v-card>
+              </v-dialog> -->
+
+          <v-table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fulano</td>
+                <td>fulano@gmail.com</td>
+                <td>Admin</td>
+                <td>
+                  <v-btn variant="tonal" color="primary">Editar</v-btn>
+                </td>
+              </tr>
+              <tr>
+                <td>Cicrano</td>
+                <td>cicrano@gmail.com</td>
+                <td>Gerente</td>
+                <td>
+                  <v-btn variant="tonal" color="primary">Editar</v-btn>
+                </td>
+              </tr>
+              <tr>
+                <td>Beltrano</td>
+                <td>beltrano@gmail.com</td>
+                <td>Convidado</td>
+                <td>
+                  <v-btn variant="tonal" color="primary">Editar</v-btn>
+                </td>
+              </tr>
+            </tbody>
+          </v-table>
+        </v-card>
+
         <v-row>
           <v-col cols="12" sm="6" md="4" lg="3">
             <v-card flat class="border mx-auto" max-width="400">
@@ -165,6 +261,7 @@
 <script setup>
 import { ref } from "vue";
 const isDrawerOpen = ref(false);
+const isDialogOpen = ref(false);
 </script>
 
 <script>
