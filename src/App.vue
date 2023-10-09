@@ -8,7 +8,11 @@
 
         <v-list-group value="Clientes">
           <template #activator="{ props }">
-            <v-list-item v-bind="props" prepend-icon="mdi-account-circle" title="Clientes">
+            <v-list-item
+              v-bind="props"
+              prepend-icon="mdi-account-circle"
+              title="Clientes"
+            >
             </v-list-item>
           </template>
 
@@ -18,11 +22,12 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar flat class="border-b">
-      <v-app-bar-nav-icon @click="isDrawerOpen = !isDrawerOpen"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        @click="isDrawerOpen = !isDrawerOpen"
+      ></v-app-bar-nav-icon>
       <v-app-bar-title>Meu app</v-app-bar-title>
 
       <template #append>
-
         <v-btn icon="mdi-theme-light-dark" class="mr-2" @click="alterarCor">
         </v-btn>
 
@@ -39,37 +44,61 @@
             <v-icon icon="mdi-cog-outline"></v-icon>
             <v-card-title>Updated Documentation Settings</v-card-title>
             <v-card-subtitle>Friday, August 25, 2023</v-card-subtitle>
-            <v-card-text>We’ve recently added some enhancements to the documentation’s settings drawer, including a new
-              Developer Mode that let’s you experiment with our upcoming GitHub integration.
-
-              All sponsor $1 or greater get to enjoy an Ad Free documentation experience.</v-card-text>
+            <v-card-text
+              >We’ve recently added some enhancements to the documentation’s
+              settings drawer, including a new Developer Mode that let’s you
+              experiment with our upcoming GitHub integration. All sponsor $1 or
+              greater get to enjoy an Ad Free documentation
+              experience.</v-card-text
+            >
             <v-card-actions>
-              <v-btn size="small" variant="text" append-icon="mdi-open-in-new" color="blue-darken-3
-" border>Sponsor now</v-btn>
+              <v-btn
+                size="small"
+                variant="text"
+                append-icon="mdi-open-in-new"
+                color="blue-darken-3
+"
+                border
+                >Sponsor now</v-btn
+              >
             </v-card-actions>
           </v-card>
 
           <v-card>
             <v-icon icon="mdi-hexagram-outline"></v-icon>
-            <v-card-title class="text-h6 font-weight-regular">Customized SLA from Vuetify</v-card-title>
-            <v-card-subtitle class="font-weight-bold">Wednesday, July 19, 2023</v-card-subtitle>
-            <v-card-text class="text-body-2">Elevate your development team’s capabilities with a personalized support plan
-              that provides
-              direct access to the Vuetify Core Development team. Get your questions answered by the experts and receive
-              invaluable guidance for your projects.</v-card-text>
+            <v-card-title class="text-h6 font-weight-regular"
+              >Customized SLA from Vuetify</v-card-title
+            >
+            <v-card-subtitle class="font-weight-bold"
+              >Wednesday, July 19, 2023</v-card-subtitle
+            >
+            <v-card-text class="text-body-2"
+              >Elevate your development team’s capabilities with a personalized
+              support plan that provides direct access to the Vuetify Core
+              Development team. Get your questions answered by the experts and
+              receive invaluable guidance for your projects.</v-card-text
+            >
             <v-card-actions>
-              <v-btn size="small" variant="text" append-icon="mdi-open-in-new" color="blue-darken-3
-" border>Book a Consultation</v-btn>
+              <v-btn
+                size="small"
+                variant="text"
+                append-icon="mdi-open-in-new"
+                color="blue-darken-3
+"
+                border
+                >Book a Consultation</v-btn
+              >
             </v-card-actions>
           </v-card>
-
         </v-dialog>
 
         <v-menu>
           <template #activator="{ props }">
             <v-avatar v-bind="props">
-              <v-img cover
-                src="https://i0.wp.com/pediaa.com/wp-content/uploads/2021/09/Portrait.jpg?fit=427%2C640&ssl=1"></v-img>
+              <v-img
+                cover
+                src="https://i0.wp.com/pediaa.com/wp-content/uploads/2021/09/Portrait.jpg?fit=427%2C640&ssl=1"
+              ></v-img>
             </v-avatar>
           </template>
 
@@ -88,33 +117,48 @@
     </v-app-bar>
     <v-main>
       <v-container>
+        <v-btn color="renan">Teste Theme</v-btn>
         <h1 class="mb-6">Dashboard</h1>
 
         <v-card flat class="border mb-4">
           <div class="d-flex justify-space-between">
             <v-card-title>Últimos usuários</v-card-title>
             <v-card-title>
-              <v-btn @click="isDialogOpen = true" variant="tonal" size="small">Adicionar Usuário</v-btn>
+              <v-btn
+                @click="isDialogOpen = true"
+                variant="tonal"
+                size="small"
+                :ripple="false"
+                >Adicionar Usuário</v-btn
+              >
               <v-dialog v-model="isDialogOpen" width="600px">
                 <v-card>
                   <v-card-title>Adicionar usuário</v-card-title>
                   <v-card-text>
                     <v-row>
                       <v-col>
-                        <v-text-field label="Nome" variant="outlined"></v-text-field>
+                        <v-text-field label="Nome"></v-text-field>
                       </v-col>
 
                       <v-col>
-                        <v-text-field label="Email" variant="outlined"></v-text-field>
+                        <v-text-field
+                          label="Email"
+                          :rules="emailRules"
+                        ></v-text-field>
                       </v-col>
                     </v-row>
 
-                    <v-select label="Cargo" variant="outlined" :items="['Admin', 'Gerente', 'Convidado']"></v-select>
+                    <v-select
+                      label="Cargo"
+                      :items="['Admin', 'Gerente', 'Convidado']"
+                    ></v-select>
                   </v-card-text>
 
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn variant="text" @click="isDialogOpen = false">Cancelar</v-btn>
+                    <v-btn variant="text" @click="isDialogOpen = false"
+                      >Cancelar</v-btn
+                    >
                     <v-btn variant="tonal" color="success">Salvar</v-btn>
                   </v-card-actions>
                 </v-card>
@@ -146,7 +190,11 @@
               <tr>
                 <td>Fulano</td>
                 <td>fulano@gmail.com</td>
-                <td>Admin</td>
+                <td>
+                  <v-chip color="primary" variant="outlined" size="small"
+                    >Admin</v-chip
+                  >
+                </td>
                 <td>
                   <v-btn variant="tonal" color="primary">Editar</v-btn>
                 </td>
@@ -154,7 +202,11 @@
               <tr>
                 <td>Cicrano</td>
                 <td>cicrano@gmail.com</td>
-                <td>Gerente</td>
+                <td>
+                  <v-chip color="success" variant="outlined" size="small"
+                    >Gerente</v-chip
+                  >
+                </td>
                 <td>
                   <v-btn variant="tonal" color="primary">Editar</v-btn>
                 </td>
@@ -162,7 +214,9 @@
               <tr>
                 <td>Beltrano</td>
                 <td>beltrano@gmail.com</td>
-                <td>Convidado</td>
+                <td>
+                  <v-chip variant="outlined" size="small">Convidado</v-chip>
+                </td>
                 <td>
                   <v-btn variant="tonal" color="primary">Editar</v-btn>
                 </td>
@@ -174,8 +228,12 @@
         <v-row>
           <v-col cols="12" sm="6" md="4" lg="3">
             <v-card flat class="border mx-auto" max-width="400">
-              <v-img class="align-end text-white" :height="200"
-                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg" cover>
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
                 <v-card-title>Top 10 paisagens naturais</v-card-title>
               </v-img>
               <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
@@ -185,15 +243,21 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn variant="outlined" color="primary">Ver mais</v-btn>
-                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success">Comprar</v-btn>
+                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success"
+                  >Comprar</v-btn
+                >
               </v-card-actions>
             </v-card>
           </v-col>
 
           <v-col cols="12" sm="6" md="4" lg="3">
             <v-card flat class="border mx-auto" max-width="400">
-              <v-img class="align-end text-white" :height="200"
-                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg" cover>
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
                 <v-card-title>Top 10 paisagens naturais</v-card-title>
               </v-img>
               <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
@@ -203,15 +267,21 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn variant="outlined" color="primary">Ver mais</v-btn>
-                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success">Comprar</v-btn>
+                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success"
+                  >Comprar</v-btn
+                >
               </v-card-actions>
             </v-card>
           </v-col>
 
           <v-col cols="12" sm="6" md="4" lg="3">
             <v-card flat class="border mx-auto" max-width="400">
-              <v-img class="align-end text-white" :height="200"
-                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg" cover>
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
                 <v-card-title>Top 10 paisagens naturais</v-card-title>
               </v-img>
               <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
@@ -221,15 +291,21 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn variant="outlined" color="primary">Ver mais</v-btn>
-                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success">Comprar</v-btn>
+                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success"
+                  >Comprar</v-btn
+                >
               </v-card-actions>
             </v-card>
           </v-col>
 
           <v-col cols="12" sm="6" md="4" lg="3">
             <v-card flat class="border mx-auto" max-width="400">
-              <v-img class="align-end text-white" :height="200"
-                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg" cover>
+              <v-img
+                class="align-end text-white"
+                :height="200"
+                src="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
+                cover
+              >
                 <v-card-title>Top 10 paisagens naturais</v-card-title>
               </v-img>
               <v-card-subtitle class="mt-3">Ilhas Caribenhas</v-card-subtitle>
@@ -239,7 +315,9 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn variant="outlined" color="primary">Ver mais</v-btn>
-                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success">Comprar</v-btn>
+                <v-btn prepend-icon="mdi-cart" variant="tonal" color="success"
+                  >Comprar</v-btn
+                >
               </v-card-actions>
             </v-card>
           </v-col>
@@ -254,6 +332,22 @@ import { ref } from "vue";
 const isDrawerOpen = ref(false);
 const isDialogOpen = ref(false);
 const isDialogNotificationsOpens = ref(false);
+const emailRules = [
+  (value) => {
+    if (value) {
+      return true;
+    } else {
+      return "O email é obrigatório";
+    }
+  },
+  (value) => {
+    if (value.includes("@")) {
+      return true;
+    } else {
+      return "Email inválido";
+    }
+  },
+];
 </script>
 
 <script>
@@ -263,18 +357,17 @@ export default {
   components: {},
 
   data: () => ({
-    cor: 'white'
+    cor: "white",
   }),
   methods: {
     alterarCor() {
-      if (this.cor == 'white') {
-        this.cor = 'dark';
+      if (this.cor == "white") {
+        this.cor = "dark";
+      } else {
+        this.cor = "white";
       }
-      else {
-        this.cor = 'white';
-      }
-    }
-  }
+    },
+  },
 };
 </script>
 
