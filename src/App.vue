@@ -26,11 +26,44 @@
         <v-btn icon="mdi-theme-light-dark" class="mr-2" @click="alterarCor">
         </v-btn>
 
-        <v-btn icon class="mr-2">
+        <v-btn icon class="mr-2" @click="isDialogNotificationsOpens = true">
           <v-badge dot color="info">
             <v-icon icon="mdi-bell-outline"></v-icon>
           </v-badge>
         </v-btn>
+
+        <!-- MODAL NOTIFICATIONS -->
+
+        <v-dialog v-model="isDialogNotificationsOpens" width="600">
+          <v-card class="mb-1">
+            <v-icon icon="mdi-cog-outline"></v-icon>
+            <v-card-title>Updated Documentation Settings</v-card-title>
+            <v-card-subtitle>Friday, August 25, 2023</v-card-subtitle>
+            <v-card-text>We’ve recently added some enhancements to the documentation’s settings drawer, including a new
+              Developer Mode that let’s you experiment with our upcoming GitHub integration.
+
+              All sponsor $1 or greater get to enjoy an Ad Free documentation experience.</v-card-text>
+            <v-card-actions>
+              <v-btn size="small" variant="text" append-icon="mdi-open-in-new" color="blue-darken-3
+" border>Sponsor now</v-btn>
+            </v-card-actions>
+          </v-card>
+
+          <v-card>
+            <v-icon icon="mdi-hexagram-outline"></v-icon>
+            <v-card-title class="text-h6 font-weight-regular">Customized SLA from Vuetify</v-card-title>
+            <v-card-subtitle class="font-weight-bold">Wednesday, July 19, 2023</v-card-subtitle>
+            <v-card-text class="text-body-2">Elevate your development team’s capabilities with a personalized support plan
+              that provides
+              direct access to the Vuetify Core Development team. Get your questions answered by the experts and receive
+              invaluable guidance for your projects.</v-card-text>
+            <v-card-actions>
+              <v-btn size="small" variant="text" append-icon="mdi-open-in-new" color="blue-darken-3
+" border>Book a Consultation</v-btn>
+            </v-card-actions>
+          </v-card>
+
+        </v-dialog>
 
         <v-menu>
           <template #activator="{ props }">
@@ -220,6 +253,7 @@
 import { ref } from "vue";
 const isDrawerOpen = ref(false);
 const isDialogOpen = ref(false);
+const isDialogNotificationsOpens = ref(false);
 </script>
 
 <script>
@@ -243,3 +277,4 @@ export default {
   }
 };
 </script>
+
